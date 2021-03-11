@@ -1,0 +1,22 @@
+@use "abstracts/vars/colors" as c;
+
+html{
+   font-size: 14px;
+   font-family: Raleway, sans-serif;
+   background-image: url(../assets/img/bg-mobile.png);
+   background-color: c.$very-dark-blue;
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+   @media screen and (min-width: 950px){
+      background-image: url(../assets/img/bg-desktop.png);
+      background-size: contain;
+      background-position: bottom center;
+   }
+}
+
+body{
+   min-height: 100vh;
+   display: grid;
+   place-content: center;
+}

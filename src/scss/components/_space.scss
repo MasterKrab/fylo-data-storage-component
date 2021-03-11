@@ -1,0 +1,107 @@
+@use "abstracts/vars/colors" as c;
+
+.space{
+   background-color: c.$dark-blue;
+   border-radius: 1rem;
+   padding: 1.5rem 2rem 3rem 2rem;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   position: relative;
+   
+   @media screen and (min-width: 950px){
+      padding: 2rem 3rem;
+      width: 570px;
+      height: 150px;
+      text-align: start;
+      align-self: flex-end;
+   }
+
+   &__title{
+      color: darken(c.$pale-blue, 10%);
+      font-size: 1rem;
+      font-weight: 400;
+   }
+
+   &__gb{
+      color: c.$pale-blue;
+      font-weight: bold;
+      opacity: 0.9;
+   }
+
+   &__progress{
+      background-color: lighten(c.$very-dark-blue, 5%);
+      padding: 3px;
+      border-radius: 1rem;
+   }
+   
+   &__bar{
+      background: linear-gradient(to right, c.$gradient-1, c.$gradient-2);
+      height: 15px;
+      display: block;
+      border-radius: 1rem;
+      position: relative;
+      width: 81.5%;
+
+      &::after{
+         content:"";
+         background-color: c.$pale-blue;
+         position: absolute;
+         top: 2px;
+         right: 2px;
+         width: 12px;
+         height: 11px;
+         border-radius: 50%;
+      }
+   }
+
+   &__available{
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__left{
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      width: 180px;
+      height: 65px;
+      border-radius: 1rem;
+      font-size: 2.5rem;
+      color: c.$very-dark-blue;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      @media screen and (min-width: 950px){
+         top: -80px;
+         left: 420px;
+         width: 210px;
+         height: 75px;
+         
+         &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 0; 
+            height: 0; 
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 30px solid #fff;
+            transform: rotate(90deg);
+         }
+      }
+   }
+
+   &__gb-left{
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: c.$grayish-blue;
+   }
+}
